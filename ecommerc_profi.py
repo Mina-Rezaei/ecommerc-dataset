@@ -1,5 +1,7 @@
+# 1. Data Cleaning and Preparation
 from readline import redisplay
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Load the dataset
 data = pd.read_csv('E-commerce Dataset.csv')
@@ -25,4 +27,16 @@ print(data.head())
 
 # Display summary statistics to understand the dataset
 print(data.describe())
+
+# 2. Analysis Techniques
+# Profit by Product Category
+
+# Group by Product_Category and calculate total profit
+category_profit = data.groupby('Product_Category')['Profit'].sum().sort_values(ascending=False)
+
+# Bar chart for profit by category
+category_profit.plot(kind='bar', figsize=(10, 6), title='Profit by Product Category')
+plt.xlabel('Product Category')
+plt.ylabel('Total Profit')
+plt.show()
 
