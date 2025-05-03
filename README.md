@@ -31,7 +31,9 @@
 
 ## Data Cleaning & Preparation:
 ### - Initial steps involved loading the dataset and assessing its structure and data types.
-### - Handled missing values in key columns (e.g., Profit, Product_Category). Depending on the extent and nature of missing data, strategies like imputation (mean/median for numerical, mode for categorical) or row removal were considered/applied [State what you did, if applicable, or what you would do].
+### - Handled missing values in key columns (data = data.dropna()). 
+### - Removed Duplicates (data = data.drop_duplicates())
+### - Convert columns to appropriate data types if necessary (data['Date'] = pd.to_datetime(data['Order_Date']))
 ### - Checked for and addressed potential outliers, particularly in Profit, Sales, and Discount columns, to prevent skewing results [Explain method if used, e.g., using IQR method or capping at a certain percentile].
 ### - Ensured data types were appropriate (e.g., Order_Date as datetime objects, numerical columns as floats/integers).
 ### - Feature Engineering: Extracted new features such as 'Month' or 'Quarter' from Order_Date to analyse time trends, and calculating 'Profit Margin'.
