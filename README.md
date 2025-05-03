@@ -38,6 +38,47 @@
 ### - Ensured data types were appropriate (e.g., Order_Date as datetime objects, numerical columns as floats/integers).
 ### - Feature Engineering: Extracted new features such as 'Month' or 'Quarter' from Order_Date to analyse time trends, and calculating 'Profit Margin'.
 
+                         Order_Date         Aging         Sales  \
+count                          51282  51282.000000  51282.000000   
+mean   2018-07-23 11:35:56.124955904      5.255187    152.337350   
+min              2018-01-01 00:00:00      1.000000     33.000000   
+25%              2018-05-07 00:00:00      3.000000     85.000000   
+50%              2018-07-28 00:00:00      5.000000    133.000000   
+75%              2018-10-17 00:00:00      8.000000    218.000000   
+max              2018-12-30 00:00:00     10.500000    250.000000   
+std                              NaN      2.960073     66.492468   
+
+           Quantity      Discount        Profit  Shipping_Cost  \
+count  51282.000000  51282.000000  51282.000000   51282.000000   
+mean       2.502964      0.303838     70.401796       7.041166   
+min        1.000000      0.100000      0.500000       0.100000   
+25%        1.000000      0.200000     24.900000       2.500000   
+50%        2.000000      0.300000     59.900000       6.000000   
+75%        4.000000      0.400000    118.400000      11.800000   
+max        5.000000      0.500000    167.500000      16.800000   
+std        1.511834      0.131025     48.728131       4.871685   
+
+                                Date         Month       Quarter  \
+count                          51282  51282.000000  51282.000000   
+mean   2018-07-24 02:52:24.765083136      7.240533      2.744413   
+min              2018-01-01 00:03:33      1.000000      1.000000   
+25%       2018-05-07 19:45:01.500000      5.000000      2.000000   
+50%              2018-07-28 09:32:20      7.000000      3.000000   
+75%    2018-10-17 17:26:34.249999872     10.000000      4.000000   
+max              2018-12-30 23:52:42     12.000000      4.000000   
+std                              NaN      3.230997      1.047431   
+
+       Profit_Margin  
+count   51282.000000  
+mean        0.425263  
+min         0.006024  
+25%         0.250746  
+50%         0.442857  
+75%         0.562946  
+max         1.000000  
+std         0.200703  
+Number of rows in the dataset: 51282
+
 ## Analysis Techniques:
 ### - Descriptive Statistics: Calculated overall total profit and average profit per order.
 ###  - Aggregation & Segmentation: Grouped the data by various dimensions (Product_Category, Product, Device_Type, Customer_Login_Type, Gender, Order_Priority, Payment_method) and calculated the sum and/or average Profit for each segment.
