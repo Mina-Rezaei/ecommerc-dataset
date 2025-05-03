@@ -31,11 +31,12 @@
 
 ## Data Cleaning & Preparation:
 ### - Initial steps involved loading the dataset and assessing its structure and data types.
-### - Handled missing values in key columns (data = data.dropna()). 
-### - Removed Duplicates (data = data.drop_duplicates())
-### - Convert columns to appropriate data types if necessary (data['Date'] = pd.to_datetime(data['Order_Date']))
-### - Checked for and addressed potential outliers, particularly in Profit, Sales, and Discount columns, to prevent skewing results [Explain method if used, e.g., using IQR method or capping at a certain percentile].
-### - Ensured data types were appropriate (e.g., Order_Date as datetime objects, numerical columns as floats/integers).
+### - Handled missing values in key columns. 
+### - Removed Duplicates
+### - Convert columns to appropriate data types e.g. createed 'Date' column by combining Order_Date and Time
+### - Remove outliers from Profit, Sales, and Discount columns using IQR method
+### - Convert numerical columns ('Sales', 'Profit', 'Discount', 'Quantity', 'Shipping_Cost') to float or integer (coerce invalids to NaN)
+### - Convert categorical columns ('Gender', 'Device_Type', 'Customer_Login_type', 'Product_Category', 'Order_Priority', 'Payment_method') to 'category' dtype
 ### - Feature Engineering: Extracted new features such as 'Month' or 'Quarter' from Order_Date to analyse time trends, and calculating 'Profit Margin'.
 
                          Order_Date         Aging         Sales  \
