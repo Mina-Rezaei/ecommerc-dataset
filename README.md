@@ -81,32 +81,170 @@ Number of rows in the dataset: 51282
 
 ## Analysis Techniques:
 ### - Descriptive Statistics: Calculated overall total profit and average profit per order.
+Overall Total Profit: 3610344.9000000004
+Average Profit per Order: 70.40179595179596
+
 ###  - Aggregation & Segmentation: Grouped the data by various dimensions (Product_Category, Product, Device_Type, Customer_Login_Type, Gender, Order_Priority, Payment_method) and calculated the sum and/or average Profit for each segment.
+Profit Summary by Product_Category:
+     Product_Category        sum       mean
+0  Auto & Accessories   483471.5  64.488662
+1          Electronic   174190.6  64.491151
+2             Fashion  2072623.9  80.816654
+3    Home & Furniture   880058.9  57.006018
+
+Profit Summary by Product:
+                   Product       sum        mean
+0             Apple Laptop   33025.0  149.434389
+1               Bed Sheets  172262.9  111.786437
+2                     Beds   53592.5   34.755188
+3               Bike Tyres   26767.2   32.445091
+4          Car & Bike Care   22700.3   27.482203
+5          Car Body Covers   21629.9   26.186320
+6                  Car Mat   20782.8   25.191273
+7        Car Media Players   39933.8   48.404606
+8   Car Pillow & Neck Rest  107735.8  130.115700
+9          Car Seat Covers   20006.9   24.192140
+10            Car Speakers   92034.8  111.557333
+11            Casula Shoes   71894.5   30.842771
+12                Curtains   23881.3   15.497274
+13         Dinner Crockery   64287.5   41.052043
+14          Dinning Tables   43326.0   28.097276
+15                    Fans   12047.7   54.514480
+16            Formal Shoes  265350.7  113.835564
+17            Fossil Watch  151271.7   64.867796
+18                    Iron   26833.2  121.417195
+19                   Jeans  276856.3  118.720540
+20                Keyboard    3292.4   14.897738
+21                     LCD    6197.2   27.666071
+22                     LED   20910.0   93.348214
+23            Mixer/Juicer    5033.3   22.470089
+24                   Mouse    4632.8   20.962896
+25           Running Shoes  289097.6  124.022994
+26          Samsung Mobile   26568.6  120.219910
+27                  Shirts  230078.3   98.661364
+28               Shoe Rack   50886.5   33.000324
+29                Sneakers   66820.7   28.666109
+30             Sofa Covers  178920.5  116.257635
+31                   Sofas   46283.9   30.015499
+32                Speakers    9909.2   37.966284
+33             Sports Wear   38984.0   16.724153
+34                   Suits   44831.3   19.224400
+35              T - Shirts  340720.6  146.106604
+36                  Tablet   22312.7  100.962443
+37             Titak watch  296718.2  127.292235
+38                  Towels  196828.2  127.727579
+39                    Tyre  131880.0  148.179775
+40               Umbrellas   49789.6   32.288975
+41                   Watch    3428.5   15.513575
+
+Profit Summary by Device_Type:
+  Device_Type        sum       mean
+0      Mobile   262289.7  71.703034
+1         Web  3348055.2  70.301848
+
+Profit Summary by Customer_Login_type:
+  Customer_Login_type        sum       mean
+0        First SignUp    11528.5  66.638728
+1               Guest   143513.7  72.008881
+2              Member  3453135.3  70.344381
+3                New      2167.4  80.274074
+
+Profit Summary by Gender:
+   Gender        sum       mean
+0  Female  1620200.4  69.987058
+1    Male  1990144.5  70.743086
+
+Profit Summary by Order_Priority:
+  Order_Priority        sum       mean
+0       Critical   283734.2  72.233758
+1           High  1112790.2  71.802181
+2            Low   169104.1  69.762417
+3         Medium  2044716.4  69.472560
+
+Profit Summary by Payment_method:
+  Payment_method        sum       mean
+0    credit_card  2692363.4  70.608256
+1     debit_card    50433.0  68.803547
+2       e_wallet   194710.3  69.813661
+3    money_order   672829.7  69.882603
+4    not_defined        8.5   8.500000
+
 ### - Time Series Analysis: Aggregated profit by month or quarter (derived from Order_Date) to identify any temporal patterns or seasonality in profitability.
+#### - Monthly Profit: Profit shows a gradual upward trend from January to November, peaking in November ($406,808.7), followed closely by May and July.
+
+#### - The average monthly profit stays fairly consistent (~$70 per transaction), but total monthly profit varies, possibly reflecting differences in transaction volume.
+
+#### - There may be a seasonal pattern with increased profitability in Q2 to Q4, suggesting stronger performance in mid to late year.
+
+#### - Quarterly Profit:
+#### - Profit increases steadily across quarters, with Q4 being the most profitable (total profit: $1,103,875.7).
+
+Profit Summary by Month:
+    Month       sum       mean
+0       1  174573.6  69.302739
+1       2  153288.2  69.486945
+2       3  200936.8  69.312453
+3       4  277646.2  71.301027
+4       5  379205.8  70.028772
+5       6  298246.1  71.384897
+6       7  374242.9  70.346410
+7       8  306771.5  70.167315
+8       9  341558.1  70.409833
+9      10  342228.5  70.057011
+10     11  406808.7  71.633862
+11     12  354838.5  70.070794
+
+Profit Summary by Quarter:
+   Quarter        sum       mean
+0        1   528798.6  69.359732
+1        2   955098.1  70.816201
+2        3  1022572.5  70.313725
+3        4  1103875.7  70.634483
+
 ### - Correlation Analysis: Investigated relationships between Profit and other numerical variables like Sales, Quantity, Discount, and Shipping_cost to understand factors influencing profitability.
 
 # 4. Findings
 
 ## Overall Profit: 
-### The total profit generated over the year was $[Total Profit Amount].
+### The total profit generated over the year was $3,610,344.9
 
 ## Profit by Product Category:
-### - (Use a Bar Chart) Display total profit per Product_Category, sorted from highest to lowest.
-### - The analysis reveals that the most significant portion of profit comes from [List top 2-3 categories]. Conversely, [List bottom 1-2 categories] contribute the least profit, or potentially generate losses.
+### - Total profit per Product_Category, sorted from highest to lowest.
+![Alt text](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/profit_per_product_cat.jpg)
+### - The analysis reveals that the most significant portion of profit comes from Fashion. Conversely, Electronics contribute the least profit, or potentially generate losses.
 
-## Profit by Other Dimensions (Use clear visuals like bar charts, potentially tables for top N):
-### - Device Type: Comparing Device_Type, we found that purchases made via [Web/Mobile] generate [higher/lower/similar] total profit." (Show bar chart).
+## High-Profit Products: Within the top categories, specific products like [T - Shirts, Titak watch] stand out as major profit contributors.
 
-### - Customer Type: Analysis of Customer_Login_Type shows that [Members/Guests] contribute significantly [more/less] to overall profit. (Show bar chart).
+Top 10 Products by Total Profit:
+         Product  Total Profit
+0     T - Shirts      340720.6
+1    Titak watch      296718.2
+2  Running Shoes      289097.6
+3          Jeans      276856.3
+4   Formal Shoes      265350.7
+5         Shirts      230078.3
+6         Towels      196828.2
+7    Sofa Covers      178920.5
+8     Bed Sheets      172262.9
+9   Fossil Watch      151271.7
+### - Device Type: Comparing Device_Type, we found that purchases made via Web generate higher total profit compared to Moblie.
+![Alt text](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/profit_per_device_type.jpg)
+
+### - Customer Type: Analysis of Customer_Login_type shows that Members contribute significantly more to overall profit. 
+![Alt text](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/profit_per_customer_login_type.jpg)
 
 ### - Profitability Drivers: (Use Scatter Plots or Bar Charts)
-#### - There is a [strong/weak/positive/negative] relationship between Sales and Profit. While higher sales often lead to higher profit, this isn't always the case, potentially due to factors like discounts or shipping costs. (Show scatter plot: Profit vs Sales).
-#### - The Discount rate significantly impacts profitability. Higher discounts correlate with [lower profit/losses] in several product categories. (Show scatter plot: Profit vs Discount, maybe colored by category).
+#### - There is a strong positive relationship between Sales and Profit (correlation: 0.92). While higher sales generally lead to higher profit, the scatter plot may show some dispersion, possibly due to variable costs or discounting.
+(Show scatter plot: Profit vs Sales)
 
-## Profit Over Time: (Use a Line Chart)
-### - Profitability shows [mention trend: e.g., peaks during Q4, dips in summer, is relatively stable] over the year. (Show line chart: Profit vs Month/Quarter).
+#### - The Discount rate shows no significant correlation with Profit (correlation: -0.00). This suggests that discounting practices are either minimal or not directly affecting profitability on average.
+(Show scatter plot: Profit vs Discount, optionally colored by category)
 
-## High-Profit Products: Within the top categories, specific products like [Product A, Product B] stand out as major profit contributors.(Maybe a table or focused bar chart if data allows).
+#### - Interestingly, there is a perfect positive correlation between Shipping Cost and Profit (correlation: 1.00), which may indicate a calculated or derived relationship — e.g., profit being computed based on shipping cost in the dataset.
+(Show scatter plot: Profit vs Shipping Cost)
+
+#### - The relationship between Quantity and Profit is weakly negative (correlation: -0.12), suggesting that selling more units does not always translate into higher profits and could be due to high-volume, low-margin products.
+
 
 # 5. Recommendations
 
