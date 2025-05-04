@@ -4,7 +4,7 @@
 This analysis addresses a critical business question: "Where is the most profit to be found?" in our e-commerce operations. By identifying profit hotspots across multiple dimensions of the business, this report provides data-driven insights to guide strategic decision-making, resource allocation, and growth planning.
 
 ## Data Source
-The analysis uses data from the Kaggle E-commerce dataset, which contains 51,290 transaction records with information on:
+The analysis uses data from the Amazon E-commerce dataset, which contains 51,290 transaction records with information on:
 - Product categories and specific products
 - Customer demographics (gender)
 - Device types and login methods
