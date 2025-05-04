@@ -1,157 +1,108 @@
-# ecommerc-dataset
-# 1. Introduction
+# E-commerce Profit Analysis: Where is the Most Profit to be Found?
 
-## Problem Statement: 
-### The goal of this analysis is to identify the primary sources of profit within the provided e-commerce dataset covering one year of sales in America. We aim to answer the question: 'Where is the most profit generated?' to help stakeholders make informed decisions regarding resource allocation, marketing focus, and strategic planning.
+## Introduction
+This analysis addresses a critical business question: "Where is the most profit to be found?" in our e-commerce operations. By identifying profit hotspots across multiple dimensions of the business, this report provides data-driven insights to guide strategic decision-making, resource allocation, and growth planning.
 
-## Business Context: 
-### Understanding profit drivers is crucial for optimising business operations, improving marketing ROI, managing inventory effectively, and ultimately increasing overall profitability.
+## Data Source
+The analysis uses data from the Amazon E-commerce dataset, which contains 51,290 transaction records with information on:
+- Product categories and specific products
+- Customer demographics (gender)
+- Device types and login methods
+- Order details (dates, payment methods, priorities)
+- Financial metrics (sales, profit, discount)
 
-# 2. Data Source
+The dataset is comprehensive with minimal missing values (less than 0.01%) across 16 columns, providing a solid foundation for analysis. The total sales volume captured is $7,813,411 with overall profit of $3,611,186 and an average profit margin of 42.53%.
 
-## Origin: 
-### The data used for this analysis is the 'ecommerce-dataset' sourced from Kaggle.
+## Methodology
+The analysis followed a structured approach:
+1. **Data Cleaning**: Handling missing values, standardizing data types, and ensuring data quality.
+2. **Multi-dimensional Analysis**: Examining profit from various angles including products, categories, customer segments, and pricing.
+3. **Comparative Assessment**: Analyzing profit metrics (total profit, margins, profit per item) across dimensions.
+4. **Visual Exploration**: Creating clear visualizations to identify patterns and relationships.
 
-## Scope: 
-### It contains transaction details for one year of online purchases within America.
+Python with pandas was used for data processing, while Matplotlib and Seaborn provided visualization capabilities.
 
-## Key Columns: 
-### Relevant columns for this profit analysis include Profit, Product_Category, Product, Sales, Quantity, Discount, Shipping_cost, Customer_id, Gender, Device_Type, Customer_Login_Type, Order_Priority, Payment_method, and Order_Date.
+## Key Findings
 
-## Quality & Limitations:
-### - The dataset provides a snapshot of one year, so findings might not capture longer-term trends or seasonality beyond that period.
-### - Geographic scope is limited to 'America' (the specifics of which region 'America' refers to - US, North America, etc. - might be a limitation if not clearly defined in the metadata).
-### - Data quality needs assessment. Initial checks has been performed for missing values, outliers, and inconsistencies (e.g., negative profit, unreasonable discounts) which could impact the analysis.
-### - The granularity of Product might be very high, potentially requiring aggregation to the Product_Category level for clearer insights.
+### 1. Product Category Analysis
+![Total Profit by Product Category](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/category_analysis.png)
+Fashion is the dominant profit center, generating $2,072,624 in profit (57.4% of total profit) with the highest profit margin at 47.7%. The remaining categories follow in descending order:
+- Home & Furniture: $880,059 (24.4% of profit, 44.5% margin)
+- Auto & Accessories: $484,313 (13.4% of profit, 44.2% margin)
+- Electronic: $174,191 (4.8% of profit, 44.1% margin)
 
-# 3. Methodology
+### 2. Product-Level Analysis
+![Top 10 Products by Profit](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/top_products_chart.png)
+The profit concentration is even more pronounced at the product level, with striking results:
+- The top 5 products (all from Fashion) account for over 40% of total profit.
+- T-Shirts alone generate $340,721 (9.4% of total profit) with an exceptional 58.9% margin.
+- The top 10 products include 7 Fashion items and 3 Home & Furniture items.
 
-## Tools: 
-### The analysis was conducted using Python with Pandas library for data manipulation and Matplotlib/Seaborn for visualisation.
+### 3. Customer Segment Analysis
+![Profit by Gender](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/profit_by_gender.png)
+Gender analysis reveals:
+- Male customers generate $1,990,782 (55.1% of profit).
+- Female customers generate $1,620,405 (44.9% of profit).
 
-## Data Cleaning & Preparation:
-### - Initial steps involved loading the dataset and assessing its structure and data types.
-### - Handled missing values in key columns. 
-### - Removed Duplicates
-### - Convert columns to appropriate data types e.g. createed 'Date' column by combining Order_Date and Time
-### - Remove outliers from Profit, Sales, and Discount columns using IQR method
-### - Convert numerical columns ('Sales', 'Profit', 'Discount', 'Quantity', 'Shipping_Cost') to float or integer (coerce invalids to NaN)
-### - Convert categorical columns ('Gender', 'Device_Type', 'Customer_Login_type', 'Product_Category', 'Order_Priority', 'Payment_method') to 'category' dtype
-### - Feature Engineering: Extracted new features such as 'Month' or 'Quarter' from Order_Date to analyse time trends, and calculating 'Profit Margin'.
+### 4. Device Type Analysis
+![Profit by Device Type](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/profit_by_device_type.png)
+The device analysis shows an overwhelming dominance of web-based shopping:
+- Web: $3,348,897 (92.7% of profit).
+- Mobile: $262,290 (7.3% of profit).
 
+### 5. Payment Method Analysis
+Credit cards dominate payment methods:
+- Credit Card: $2,692,916 (74.6% of profit).
+- Money Order: $672,978 (18.6% of profit).
+- E-Wallet: $194,710 (5.4% of profit).
+- Debit Card: $50,573 (1.4% of profit).
 
-## Analysis Techniques:
-### - Descriptive Statistics: Calculated overall total profit and average profit per order.
-Overall Profit Metrics:
-Total Sales: $7,813,411.00
-Total Profit: $3,611,186.60
-Average Profit Margin: 42.53%
+### 6. Discount Strategy Insights
+The discount analysis reveals an important relationship between discount levels and profitability:
+- 0-10% discounts: Highest profit margin (50.0%) but lowest total profit ($556,010).
+- 11-20% discounts: Best balance of margin (47.3%) and total profit ($836,559).
+- Higher discounts show progressively lower margins.
 
-###  - Aggregation & Segmentation: Grouped the data by various dimensions (Product_Category, Product, Device_Type, Customer_Login_Type, Gender, Order_Priority, Payment_method) and calculated the sum and/or average Profit for each segment.
+![Impact of Discount Level on Profit & Profit Margin](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/payment_method_analysis.png)
 
-### - Time Series Analysis: Aggregated profit by month or quarter (derived from Order_Date) to identify any temporal patterns or seasonality in profitability.
-#### - Monthly Profit: Profit shows a gradual upward trend from January to November, peaking in November ($406,808.7), followed closely by May and July.
+### 7. Seasonal Patterns
+![Monthly Profit Trends](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/monthly_profit_chart.png)
+Clear seasonal patterns emerge:
+- Peak profit months: November ($406,809), May ($379,386), July ($374,392).
+- Lowest profit months: February ($153,288), January ($174,574).
+- Despite volume fluctuations, profit margins remain stable around 46%.
 
-#### - The average monthly profit stays fairly consistent (~$70 per transaction), but total monthly profit varies, possibly reflecting differences in transaction volume.
+## Recommendations
 
-#### - There may be a seasonal pattern with increased profitability in Q2 to Q4, suggesting stronger performance in mid to late year.
+### 1. Product Strategy
+- **Fashion Focus**: Allocate the majority of inventory and marketing resources to Fashion, particularly the top 5 products that contribute over 40% of total profit.
+- **T-Shirt Excellence**: Develop an expanded T-shirt line with variations in design, materials, and price points.
+- **Product Mix Optimization**: Review the low-performing Electronic category (4.8% of profit) to either improve performance or reduce resource allocation.
 
-#### - Quarterly Profit:
-#### - Profit increases steadily across quarters, with Q4 being the most profitable (total profit: $1,103,875.7).
+### 2. Customer Targeting
+- **Gender-Specific Marketing**: Create targeted campaigns for male customers in Fashion and Auto categories, and female customers in Home & Furniture.
+- **Mobile Channel Growth**: Implement a mobile-first strategy to grow the underutilized mobile channel (7.3% of profit) through app improvements and mobile-exclusive offers.
 
-Profit Summary by Month:
-    Month       sum       mean
-0       1  174573.6  69.302739
-1       2  153288.2  69.486945
-2       3  200936.8  69.312453
-3       4  277646.2  71.301027
-4       5  379205.8  70.028772
-5       6  298246.1  71.384897
-6       7  374242.9  70.346410
-7       8  306771.5  70.167315
-8       9  341558.1  70.409833
-9      10  342228.5  70.057011
-10     11  406808.7  71.633862
-11     12  354838.5  70.070794
+### 3. Pricing Strategy
+- **Strategic Discounting**: Implement a tiered discount strategy:
+  - Premium Strategy (0-10% discounts): For high-margin products and loyal customers.
+  - Volume Strategy (11-20% discounts): For customer acquisition and maximizing total profit.
+  - Limited Deep Discounts (>20%): Reserved for inventory clearance and special promotions.
 
-Profit Summary by Quarter:
-   Quarter        sum       mean
-0        1   528798.6  69.359732
-1        2   955098.1  70.816201
-2        3  1022572.5  70.313725
-3        4  1103875.7  70.634483
+### 4. Seasonal Planning
+- **Peak Season Preparation**: Develop comprehensive strategies for the November, May, and July profit peaks.
+- **Off-Season Stimulus**: Create special promotions to boost sales in the lowest-performing months (January-February).
 
-### - Correlation Analysis: Investigated relationships between Profit and other numerical variables like Sales, Quantity, Discount, and Shipping_cost to understand factors influencing profitability.
+### 5. Payment Optimization
+- **Credit Card Priority**: Enhance the credit card payment experience and develop card-specific loyalty programs.
+- **E-Wallet Expansion**: Invest in expanding e-wallet adoption, which shows strong margins (46.1%).
 
-# 4. Findings
+## Conclusion
+Our analysis clearly shows that the most profit is found at the intersection of several key dimensions:
+1. **Category & Product**: Fashion dominates with 57.4% of profit, with just five products (T-Shirts, Titan Watch, Running Shoes, Jeans, and Formal Shoes) contributing over 40% of total profit.
+2. **Customer Segment**: Male customers generate more profit (55.1%), with a particularly strong preference for Fashion products.
+3. **Pricing Strategy**: The sweet spot for discounting appears to be the 11-20% range, which delivers the highest total profit while maintaining a strong 47.3% profit margin.
+4. **Channel**: Web-based shopping accounts for 92.7% of profit, highlighting both a strength to maintain and an opportunity to grow mobile.
+5. **Seasonality**: November, May, and July represent profit peaks that should be maximized through strategic planning.
 
-## Overall Profit: 
-### The total profit generated over the year was $3,611,186.60
-Total Sales: $7,813,411
-Total Profit: $3,611,186.60
-Average Profit Margin: 42.53 %
-
-## Profit by Product Category:
-### - Total profit per Product_Category, sorted from highest to lowest.
-![Alt text](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/profit_per_product_cat.jpg)
-### - Fashion is by far the most profitable category, accounting for $2,072,624 in profit—57.4 % of total profit—on 55.6 % of total sales. It out‑performs the next category (Home & Furniture) by over $1.19 million in absolute profit.
-Product Category	Total Profit	Profit Share	Sales Share
-Fashion	$2,072,624	57.39 %	55.62 %
-Home & Furniture	$880,059	24.37 %	25.29 %
-Auto & Accessories	$484,313	13.41 %	14.04 %
-Electronic	$174,191	4.82 %	5.05 %
-
-## High-Profit Products: Within the top categories, specific products like [T - Shirts, Titak watch] stand out as major profit contributors.
-
-Top 10 Products by Total Profit:
-         Product  Total Profit
-0     T - Shirts      340720.6
-1    Titak watch      296718.2
-2  Running Shoes      289097.6
-3          Jeans      276856.3
-4   Formal Shoes      265350.7
-5         Shirts      230078.3
-6         Towels      196828.2
-7    Sofa Covers      178920.5
-8     Bed Sheets      172262.9
-9   Fossil Watch      151271.7
-### - Device Type: Comparing Device_Type, we found that purchases made via Web generate higher total profit compared to Moblie.
-![Alt text](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/profit_per_device_type.jpg)
-
-### - Customer Type: Analysis of Customer_Login_type shows that Members contribute significantly more to overall profit. 
-![Alt text](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/profit_per_customer_login_type.jpg)
-
-### - Profitability Drivers: (Use Scatter Plots or Bar Charts)
-#### - There is a strong positive relationship between Sales and Profit (correlation: 0.92). While higher sales generally lead to higher profit, the scatter plot may show some dispersion, possibly due to variable costs or discounting.
-(Show scatter plot: Profit vs Sales)
-
-#### - The Discount rate shows no significant correlation with Profit (correlation: -0.00). This suggests that discounting practices are either minimal or not directly affecting profitability on average.
-(Show scatter plot: Profit vs Discount, optionally colored by category)
-
-#### - Interestingly, there is a perfect positive correlation between Shipping Cost and Profit (correlation: 1.00), which may indicate a calculated or derived relationship — e.g., profit being computed based on shipping cost in the dataset.
-(Show scatter plot: Profit vs Shipping Cost)
-
-#### - The relationship between Quantity and Profit is weakly negative (correlation: -0.12), suggesting that selling more units does not always translate into higher profits and could be due to high-volume, low-margin products.
-
-
-# 5. Recommendations
-
-## - Focus on High-Profit Areas: Allocate marketing budget and inventory investment towards the top profit-generating Product_Category ([List them again]). Explore opportunities for cross-selling or up-selling within these categories.
-
-## - Address Low-Profit Areas: Investigate the low profitability of [List bottom categories/products]. Analyse their cost structure, pricing strategy, and discount levels. Consider strategic repricing, cost reduction, or even SKU rationalization (discontinuation) if they consistently generate losses.
-
-## - Optimise Channel Strategy: Given the profitability associated with [Web/Mobile] users, ensure a seamless user experience on this platform. If one channel lags, investigate potential friction points.
-
-## - Leverage Customer Type: Since [Members/Guests] are more profitable, develop strategies to encourage sign-ups or enhance loyalty programs to increase member engagement and retention.
-
-## - Review Discount Policy: Re-evaluate the discounting strategy, particularly for categories where high discounts significantly erode profit margins. Implement smarter, targeted promotions instead of broad, deep discounts.
-
-## - Manage Seasonality: Plan promotional activities and inventory levels according to the observed seasonal profit trends ([mention peak/low periods]) to maximize returns during peak times and mitigate losses during off-peak periods.
-
-# 6. Conclusion
-
-## - In conclusion, this analysis pinpointed where the most profit is found within the business's e-commerce operations over the past year. The primary drivers are clearly [mention top product categories] and potentially influenced by [mention key factor like customer type or device].
-
-## - By focusing resources on the most profitable segments, addressing areas of low profitability, and refining strategies around customer types, channels, and promotions, the business can make data-driven decisions to enhance overall profitability.
-
-## - These insights provide a clear roadmap for strategic adjustments aimed at boosting the bottom line.
+By focusing resources on these profit hotspots while developing targeted strategies to address underdeveloped areas, we can maximize profitability and drive sustainable business growth.
