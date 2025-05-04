@@ -27,6 +27,8 @@ Python with pandas was used for data processing, while Matplotlib and Seaborn pr
 ### 1. Product Category Analysis
 ![Total Profit by Product Category](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/category_analysis.png)
 
+![alt text](category_analysis.png)
+
 Fashion is the dominant profit center, generating $2,072,624 in profit (57.4% of total profit) with the highest profit margin at 47.7%. The remaining categories follow in descending order:
 - Home & Furniture: $880,059 (24.4% of profit, 44.5% margin)
 - Auto & Accessories: $484,313 (13.4% of profit, 44.2% margin)
