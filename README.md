@@ -25,7 +25,6 @@ Python with pandas was used for data processing, while Matplotlib and Seaborn pr
 ## Key Findings
 
 ### 1. Product Category Analysis
-![Total Profit by Product Category](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/category_analysis.png)
 
 ![alt text](category_analysis.png)
 
@@ -35,20 +34,26 @@ Fashion is the dominant profit center, generating $2,072,624 in profit (57.4% of
 - Electronic: $174,191 (4.8% of profit, 44.1% margin)
 
 ### 2. Product-Level Analysis
-![Top 10 Products by Profit](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/top_products_chart.png)
+
+![alt text](top_products_chart.png)
+
 The profit concentration is even more pronounced at the product level, with striking results:
 - The top 5 products (all from Fashion) account for over 40% of total profit.
 - T-Shirts alone generate $340,721 (9.4% of total profit) with an exceptional 58.9% margin.
 - The top 10 products include 7 Fashion items and 3 Home & Furniture items.
 
 ### 3. Customer Segment Analysis
-![Profit by Gender](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/profit_by_gender.png)
+
+![alt text](profit_by_gender.png)
+
 Gender analysis reveals:
 - Male customers generate $1,990,782 (55.1% of profit).
 - Female customers generate $1,620,405 (44.9% of profit).
 
 ### 4. Device Type Analysis
-![Profit by Device Type](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/profit_by_device_type.png)
+
+![alt text](profit_by_device_type.png)
+
 The device analysis shows an overwhelming dominance of web-based shopping:
 - Web: $3,348,897 (92.7% of profit).
 - Mobile: $262,290 (7.3% of profit).
@@ -66,10 +71,12 @@ The discount analysis reveals an important relationship between discount levels 
 - 11-20% discounts: Best balance of margin (47.3%) and total profit ($836,559).
 - Higher discounts show progressively lower margins.
 
-![Impact of Discount Level on Profit & Profit Margin](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/payment_method_analysis.png)
+![alt text](payment_method_analysis.png)
 
 ### 7. Seasonal Patterns
-![Monthly Profit Trends](/Users/mina.rezaei/Desktop/Repository/ecommerce-profit/ecommerc-dataset/monthly_profit_chart.png)
+
+![alt text](monthly_profit_chart.png)
+
 Clear seasonal patterns emerge:
 - Peak profit months: November ($406,809), May ($379,386), July ($374,392).
 - Lowest profit months: February ($153,288), January ($174,574).
