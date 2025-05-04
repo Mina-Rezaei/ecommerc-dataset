@@ -4,7 +4,7 @@
 This analysis addresses a critical business question: "Where is the most profit to be found?" in our e-commerce operations. By identifying profit hotspots across multiple dimensions of the business, this report provides data-driven insights to guide strategic decision-making, resource allocation, and growth planning.
 
 ## Data Source
-The analysis uses data from the Amazon E-commerce dataset, which contains 51,290 transaction records with information on:
+The analysis uses data from the Kaggle E-commerce dataset, which contains 51,290 transaction records with information on:
 - Product categories and specific products
 - Customer demographics (gender)
 - Device types and login methods
@@ -15,12 +15,12 @@ The dataset is comprehensive with minimal missing values (less than 0.01%) acros
 
 ## Methodology
 The analysis followed a structured approach:
-1. **Data Cleaning**: Handling missing values, standardizing data types, and ensuring data quality.
+1. **Data Cleaning**: Handling missing values, standardising data types, and ensuring data quality.
 2. **Multi-dimensional Analysis**: Examining profit from various angles including products, categories, customer segments, and pricing.
-3. **Comparative Assessment**: Analyzing profit metrics (total profit, margins, profit per item) across dimensions.
-4. **Visual Exploration**: Creating clear visualizations to identify patterns and relationships.
+3. **Comparative Assessment**: Analysing profit metrics (total profit, margins, profit per item) across dimensions.
+4. **Visual Exploration**: Creating clear visualisations to identify patterns and relationships.
 
-Python with pandas was used for data processing, while Matplotlib and Seaborn provided visualization capabilities.
+Python with pandas was used for data processing, while Matplotlib and Seaborn provided visualisation capabilities.
 
 ## Key Findings
 
@@ -44,11 +44,18 @@ The profit concentration is even more pronounced at the product level, with stri
 
 ### 3. Customer Segment Analysis
 
+The Customer Segment Analysis section provides insights into how profits are distributed between male and female customers, as well as the product categories contributing to their respective profits.
+
 ![alt text](profit_by_gender.png)
 
 Gender analysis reveals:
 - Male customers generate $1,990,782 (55.1% of profit).
 - Female customers generate $1,620,405 (44.9% of profit).
+
+![alt text](gender_category_profit.png)
+
+- **Male customers** with the majority of their profit coming from the **Fashion** and **Auto & Accessories** categories.
+- **Female customers** with strong contributions from the **Home & Furniture** and **Fashion** categories.
 
 ### 4. Device Type Analysis
 
@@ -59,6 +66,9 @@ The device analysis shows an overwhelming dominance of web-based shopping:
 - Mobile: $262,290 (7.3% of profit).
 
 ### 5. Payment Method Analysis
+
+![alt text](payment_method_analysis.png)
+
 Credit cards dominate payment methods:
 - Credit Card: $2,692,916 (74.6% of profit).
 - Money Order: $672,978 (18.6% of profit).
@@ -66,12 +76,14 @@ Credit cards dominate payment methods:
 - Debit Card: $50,573 (1.4% of profit).
 
 ### 6. Discount Strategy Insights
+
+![alt text](discount_margin_impact.png)
+![alt text](discount_profit.png)
+
 The discount analysis reveals an important relationship between discount levels and profitability:
 - 0-10% discounts: Highest profit margin (50.0%) but lowest total profit ($556,010).
 - 11-20% discounts: Best balance of margin (47.3%) and total profit ($836,559).
 - Higher discounts show progressively lower margins.
-
-![alt text](payment_method_analysis.png)
 
 ### 7. Seasonal Patterns
 
@@ -87,7 +99,7 @@ Clear seasonal patterns emerge:
 ### 1. Product Strategy
 - **Fashion Focus**: Allocate the majority of inventory and marketing resources to Fashion, particularly the top 5 products that contribute over 40% of total profit.
 - **T-Shirt Excellence**: Develop an expanded T-shirt line with variations in design, materials, and price points.
-- **Product Mix Optimization**: Review the low-performing Electronic category (4.8% of profit) to either improve performance or reduce resource allocation.
+- **Product Mix Optimisation**: Review the low-performing Electronic category (4.8% of profit) to either improve performance or reduce resource allocation.
 
 ### 2. Customer Targeting
 - **Gender-Specific Marketing**: Create targeted campaigns for male customers in Fashion and Auto categories, and female customers in Home & Furniture.
@@ -96,14 +108,14 @@ Clear seasonal patterns emerge:
 ### 3. Pricing Strategy
 - **Strategic Discounting**: Implement a tiered discount strategy:
   - Premium Strategy (0-10% discounts): For high-margin products and loyal customers.
-  - Volume Strategy (11-20% discounts): For customer acquisition and maximizing total profit.
+  - Volume Strategy (11-20% discounts): For customer acquisition and maximising total profit.
   - Limited Deep Discounts (>20%): Reserved for inventory clearance and special promotions.
 
 ### 4. Seasonal Planning
 - **Peak Season Preparation**: Develop comprehensive strategies for the November, May, and July profit peaks.
 - **Off-Season Stimulus**: Create special promotions to boost sales in the lowest-performing months (January-February).
 
-### 5. Payment Optimization
+### 5. Payment Optimisation
 - **Credit Card Priority**: Enhance the credit card payment experience and develop card-specific loyalty programs.
 - **E-Wallet Expansion**: Invest in expanding e-wallet adoption, which shows strong margins (46.1%).
 
