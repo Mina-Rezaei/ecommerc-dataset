@@ -49,6 +49,7 @@ The Customer Segment Analysis section provides insights into how profits are dis
 ![alt text](profit_by_gender.png)
 
 Gender analysis reveals:
+
 - Male customers generate $1,990,782 (55.1% of profit).
 - Female customers generate $1,620,405 (44.9% of profit).
 
